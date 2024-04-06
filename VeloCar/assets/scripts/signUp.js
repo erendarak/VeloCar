@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function getInfo(event) {
-    event.preventDefault(); // Prevent the form from submitting
+    event.preventDefault();
     nameInput = document.getElementById("NameInput").value;
     surnameInput = document.getElementById("SurnameInput").value;
     mailInput = document.getElementById("MailInput").value;
@@ -19,12 +19,9 @@ function getInfo(event) {
     rePasswordInput = document.getElementById("rePasswordInput").value;
     storedData = JSON.parse(localStorage.getItem("storedData")) || [];
     
-    // Call the validate function to check the form inputs
     if (validate()) {
-        // Alert only when validation succeeds
         alert("Information stored successfully!");
         
-        // Push the data to the storedData array
         storedData.push({
             name: nameInput,
             surname: surnameInput,
@@ -33,7 +30,6 @@ function getInfo(event) {
             repassword: rePasswordInput
         });
 
-        // Store the updated array back to local storage
         localStorage.setItem("storedData", JSON.stringify(storedData));
     }
 }

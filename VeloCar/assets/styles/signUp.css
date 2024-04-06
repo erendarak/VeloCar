@@ -195,7 +195,17 @@ body {
 
 
 
-    
+@media (max-width: 1400px) {
+    .SignInButton {
+        display: none;
+    }
+    .SignUpButton {
+        display: none;
+    }
+    .FAQButton {
+        display: none;
+    }
+}   
 
       
 

@@ -2,15 +2,13 @@ var cardName;
 var cardNumber;
 var cvv;
 var expDate;
-var paymentMethod; // Define a variable to store the payment method
+var paymentMethod;
 
 document.addEventListener("DOMContentLoaded", function() {
     var cNumInput = document.getElementById("CNumInput");
     cNumInput.addEventListener("input", function(event) {
-        // Remove non-numeric characters
         this.value = this.value.replace(/\D/g, '');
 
-        // Limit input to 16 characters
         if (this.value.length > 16) {
             this.value = this.value.slice(0, 16);
         }
@@ -18,10 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var cvvInput = document.getElementById("CVVInput");
     cvvInput.addEventListener("input", function(event) {
-        // Remove non-numeric characters
         this.value = this.value.replace(/\D/g, '');
 
-        // Limit input to 3 characters
         if (this.value.length > 3) {
             this.value = this.value.slice(0, 3);
         }
@@ -39,7 +35,6 @@ function getInfo(event) {
     cvv = document.getElementById("CVVInput").value;
     expDate = document.getElementById("EXPDateInput").value;
 
-    // Get the selected payment method
     var paymentMethodElements = document.getElementsByName("paymentmethod");
     for (var i = 0; i < paymentMethodElements.length; i++) {
         if (paymentMethodElements[i].checked) {
@@ -53,7 +48,7 @@ function getInfo(event) {
         cardNumber: cardNumber,
         cvv: cvv,
         expDate: expDate,
-        paymentMethod: paymentMethod // Include payment method in the payment information
+        paymentMethod: paymentMethod
     };
 
     var storedPaymentData = JSON.parse(localStorage.getItem("storedPaymentData")) || [];
