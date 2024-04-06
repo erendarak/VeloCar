@@ -6,9 +6,10 @@
     <meta charset="utf-8" />
     <header>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
     </header>
     <link rel="stylesheet" href="assets/styles/payment.css" />
+
 </head>
 
 <div class="UpperBlueBar">
@@ -20,74 +21,78 @@
 
     <div class="SignInButton" id="buttons">
         <p class="UpperBarElements"><u>
-            <a href="MAINPAGE" target="_blank">Sign In</a></u>
+                <a href="MAINPAGE" target="_blank">Sign In</a></u>
         </p>
     </div>
 
     <div class="SignUpButton" id="buttons">
         <p class="UpperBarElements"><u>
-            <a href="MAINPAGE" target="_blank">Sign Up</a></u>
+                <a href="MAINPAGE" target="_blank">Sign Up</a></u>
         </p>
     </div>
 
     <div class="FAQButton" id="buttons">
         <p class="UpperBarElements"><u>
-            <a href="MAINPAGE" target="_blank">FAQ</a></u>
+                <a href="MAINPAGE" target="_blank">FAQ</a></u>
         </p>
     </div>
 
 
-<div class= "PaymentMethodBar" name="PMethodBar">
-    <h1 class="choosePaymentText">Choose Your Payment Mehod</h1>
-    <div class="radioButtonCard">
-        <input type="radio" id=" CreditCard" name="paymentmethod" value="Credit Card" checked="checked">
-        <label for="CreditCard">Credit Card</label>
-    </div>
+    <div class="PaymentMethodBar" name="PMethodBar">
+        <h1 class="choosePaymentText">Choose Your Payment Mehod</h1>
+        <div class="radioButtonCard">
+            <input type="radio" id=" CreditCard" name="paymentmethod" value="Credit Card" checked="checked">
+            <label for="CreditCard">Credit Card</label>
+        </div>
 
-    <div class="radioButtonDebitCard">
-        <input type="radio" id="Debit" name="paymentmethod" value="Debit Card">
-        <label for="Debit">Debit Card</label>
-    </div>
+        <div class="radioButtonDebitCard">
+            <input type="radio" id="Debit" name="paymentmethod" value="Debit Card">
+            <label for="Debit">Debit Card</label>
+        </div>
 
-    
-</div>
-<div class="PaymentInfoBar" name="PInfoBar">
-    <div class="CardNameText">
-      <p><b>Name On the Card</b></p>
-      <input class="CNameInput" type="text" name= "paymentInput" id="CNameInput" >
-    </div>
-
-    <div class="CardNum">
-        <p><b>Card Number</b></p>
-        <input class="CNumInput" type="text" name= "paymentInput" minlength="16" maxlength="16" id="CNumInput">
 
     </div>
-    <div class="CVV">
-        <p><b>CVV</b></p>
-        <input class="CVVInput" type="text" name= "paymentInput" id="CVVInput" maxlength="3" minlength="3">
+    <div class="PaymentInfoBar" name="PInfoBar">
+        <div class="CardNameText">
+            <p><b>Name On the Card</b></p>
+            <input class="CNameInput" type="text" name="paymentInput" id="CNameInput">
+        </div>
+
+        <div class="CardNum">
+            <p><b>Card Number</b></p>
+            <input class="CNumInput" type="text" name="paymentInput" minlength="16" maxlength="16" id="CNumInput">
+
+        </div>
+
+        <div class="CVV">
+            <p><b>CVV</b></p>
+           
+            <input class="CVVInput" type="text" name="paymentInput" id="CVVInput" maxlength="3" minlength="3">
+        </div>
+
+        <div class="ExpDate">
+            <p><b>Expiration Date</b></p>
+            
+            <input class="EXPDateInput" type="date" name="paymentInput" id="EXPDateInput">
+        </div>
+
+
+        <form id="PaymentForm">
+            <button class="PaymentSubmitButton" type="submit" name="paymentSubmit" id="PaymentSubmitButton">Complete the
+                Payment</button>
+        </form>
+
+
+
+
+
+
     </div>
-    
-    <div class="ExpDate">
-        <p><b>Expiration Date</b></p>
-        <input class="EXPDateInput" type="date" name= "paymentInput" id="EXPDateInput">
-        <br/>
-        
-    </div>
-    <form id="PaymentForm">
-        <button class="PaymentSubmitButton" type="submit" name= "paymentSubmit" id="PaymentSubmitButton">Complete the Payment</button>
-    </form>
-    
-    
-    
-    
+    <script src="assets/scripts/Payment.js"></script>
 
+    <body>
 
-</div>
-<script src="assets/scripts/Payment.js"></script>
-
-<body>
-    
-</body>
+    </body>
 
 
 </html>

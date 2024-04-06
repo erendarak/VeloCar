@@ -11,10 +11,7 @@
     color:white;
     text-align:center;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size:50px;
-    position: relative;
-    top: 20%; left: 0%;
-    
+    font-size:50px;  
 }
 
 .UpperBlueBar{
@@ -30,7 +27,7 @@
     width: 500px; 
     height: 100px; 
     background-color:rgb(37, 37, 37); 
-    position: relative;
+    position: absolute;
     top: 10%; left: 5%;
 }
 #buttons{
@@ -38,18 +35,18 @@
     height: 75px; 
     background-color: rgb(37, 37, 37); 
     border-radius: 50%/100%;
-    position: relative;
+    position:absolute;
 }
 .SignInButton{
-    top: -55%;
+    top: 30%;
     left: 70%;
 }
 .SignUpButton{
-    top: -122%;
+    top: 30%;
     left: 80%;
 }
 .FAQButton{
-    top: -190%;
+    top: 30%;
     left: 90%;
 }
 
@@ -61,13 +58,14 @@ div a {
 body {
 
     background-color: rgb(37, 37, 37);
+    position: relative;
 }
 .PaymentMethodBar{
     width: 1000px;
     height: 150px;
     background-color: rgb(1,131, 252);
     position: relative;
-    top: -70%;
+    top: 200%;
     left: 30%;
 }
 .choosePaymentText{
@@ -100,7 +98,7 @@ body {
     height: 500px;
     background-color: rgb(1,131, 252);
     position: relative;
-    top: -35%;
+    top: 200%;
     left: 30%;
 }
 .CardNameText{
@@ -125,19 +123,18 @@ body {
     text-align: center;
     font-size:24px;
     color: white;
-    position: relative;
-    top: 5%;
-    left: -7%;
+    position: absolute;
+    top: 50%; left: 37%;  
 }
 .ExpDate{
     
     text-align: center ;
     font-size:24px;
     color: white;
-    position: relative;
-    top: -19%;
-    left: 7%;
+    position: absolute;
+    top: 50%; left:50%;  
 }
+
 
 .CNameInput{
     width: 300px;
@@ -145,6 +142,7 @@ body {
     text-align: left;
     font-size:25px;
     color: black;
+    
 }
 .CNumInput{
     width: 300px;
@@ -159,6 +157,9 @@ body {
     text-align: left;
     font-size:25px;
     color: black;
+     
+    
+    
     
 }
 .EXPDateInput{
@@ -167,6 +168,9 @@ body {
     text-align: left;
     font-size:25px;
     color: black;
+    
+   
+    
     
 }
 .PaymentSubmitButton{

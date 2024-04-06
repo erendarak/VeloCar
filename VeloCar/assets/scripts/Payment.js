@@ -76,7 +76,7 @@ function validate() {
         alert("CVV must be exactly 3 digits long.");
         return false;
     }
-    if(cardNumber.length != 3){
+    if(cardNumber.length != 16){
         alert("Card Number must be exactly 16 digits long.");
         return false;
     }
