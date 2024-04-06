@@ -20,8 +20,7 @@ body {
 .UpperBlueBar{
     width: 100%; 
     height: 150px; 
-    background-color: 
-    rgb(1, 131, 252);
+    background-color:  rgb(1, 131, 252);
 }
 
 .UpperLogo{
@@ -128,3 +127,35 @@ div a {
     margin-top: 2rem;
 }
 
+#backgroundColor {
+    background-color: rgb(1, 131, 252);
+}
+
+#font{
+    font-size: 40px;
+    text-align: center;
+    color: black;
+}
+#font2{
+    font-size: 40px;
+    text-align: center;
+    color: black;
+}
+.largerInput{
+    width: 50%;
+    height: 50%;
+    border-radius: 50px;
+    border: 10px solid #ccc;
+    padding: 20px;
+    margin: 9px 0;
+    text-align: center;
+    display: flex;
+    align-items: center; 
+}
+
+.allign {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

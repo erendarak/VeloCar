@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeloCar - BMW i8</title>
+    <link rel="stylesheet" href="assets/styles/carView.css">
+</head>
+
+<body>
+    <form id="myForm" action="carView.html">
+        <button type="submit" name="button" value="Volkswagen Passat">Volkswagen Passat</button>
+        <button type="submit" name="button" value="Renault Clio">Renault Clio</button>
+        <button type="submit" name="button" value="Toyota Yaris">Toyota Yaris</button>
+        <button type="submit" name="button" value="BMW 5.25">BMW 5.25</button>
+        <button type="submit" name="button" value="Mercedes AMG GT">Mercedes AMG GT</button>
+        <button type="submit" name="button" value="Aston Martin Vanquish">Aston Martin Vanquish</button>
+        <button type="submit" name="button" value="Lamborghini Urus">Lamborghini Urus</button>
+        <button type="submit" name="button" value="Alfa Romeo Giulietta">Alfa Romeo Giulietta</button>
+        <button type="submit" name="button" value="Mercedes G63">Mercedes G63</button>
+        <button type="submit" name="button" value="Porsche 911 GT3 RS">Porsche 911 GT3 RS</button>
+    </form>
+
+
+
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var clickedButtonValue = event.submitter.value;
+
+            sessionStorage.setItem('title', clickedButtonValue);
+
+            window.location.href = 'carView.html';
+            
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>
