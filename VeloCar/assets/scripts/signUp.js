@@ -31,6 +31,7 @@ function getInfo(event) {
         });
 
         localStorage.setItem("storedData", JSON.stringify(storedData));
+        redirectToLogin();
     }
 }
 
@@ -84,4 +85,8 @@ function validateifEmpty(){
         return false;
     }
     return true;
+}
+function redirectToLogin() {
+    let form = document.getElementById('signupForm');
+    form.setAttribute('action', 'login.html');
 }
