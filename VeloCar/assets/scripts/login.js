@@ -49,7 +49,7 @@ function submitAction() {
     if (sign_in) {
         if(logIn(email, password)){
             alert('successfully login');
-            window.location.replace('main-page.html');
+            redirect();
             return true;
         }
     } else if (delete_rad) {
@@ -60,7 +60,7 @@ function submitAction() {
     } else {
         if(logIn(email, password)){
             alert('successfully login');
-            window.location.replace('main-page.html');
+            redirect();
             return true;
         }
         return false;
@@ -97,4 +97,10 @@ function deleteAccount(email, password){
         }
     }
     return false;
+}
+function redirect(){
+    var element = document.getElementById('id_form');
+    element.action = 'main-page.html';
+    element.submit();
+    element.action = '';
 }
