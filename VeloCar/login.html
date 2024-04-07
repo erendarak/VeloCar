@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/login.css">
-    <title>Login To VeloCar</title>
+    <script src="./assets/scripts/login.js"></script>
+    <title>Login To Velocity</title>
 </head>
 
 <body>
     <div class="UpperBlueBar">
         <div class="UpperLogo">
             <h1 class="VeloCarLogo">
-                <a href="main-page.html" id="deleteStorageLink">VeloCar</a>
+                <a href="main-page.html" id="deleteStorageLink">VeloCity</a>
             </h1>
         </div>
 
@@ -37,19 +38,19 @@
 
     <section>
         <div class="login">
-            <form class="myForm">
-                <h1>Log In</h1>
-                <label>Username</label>
-                <input type="text" placeholder="Enter your username"><br>
+            <form class="myForm" onsubmit="return submitAction();">
+                <h1 id="top_header">Log In</h1>
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email" required id="id_email"><br>
                 <label>Password</label>
-                <input type="password" id="id-password" placeholder="Enter your password">
-                <button>Sign In</button>
-                <p>Don't have an account? <a href="#">Register</a></p>
+                <input type="password" placeholder="Enter your password" required id="id_pass" minlength="6">
+                <button type="submit">Sign In</button>
+                <p>Don't have an account? <a href="signUpPage.html">Register</a></p>
                 <p>Select other Actions</p>
                 <div class="radio">
-                    <input type="radio" name="action" value="Sign-In" id="id_sign">
+                    <input type="radio" name="action" value="Sign-In" id="id_sign" onclick="checkRadioButtons();">
                     <label for="id_sign">Sign-In</label><br>
-                    <input type="radio" name="action" value="Delete-Account" id="id_delete">
+                    <input type="radio" name="action" value="Delete-Account" id="id_delete" onclick="checkRadioButtons();">
                     <label for="id_delete">Delete Account</label>
                 </div>
             </form>
