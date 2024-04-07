@@ -35,18 +35,57 @@ function getInfo(event) {
 }
 
 function validate() {
-    if (nameInput === '' || surnameInput === '' || mailInput === '' || passwordInput === '' || rePasswordInput === '') {
-        alert("Please fill in all fields.");
+    if (!validateifEmpty()) {
         return false;
     }
-    if(passwordInput.length<=6||passwordInput.length>16){
-        alert("Password must be between 6 and 16 characters long.");
+    if(!validatepasswordLength()){      
         return false;
     }
 
+    if (!validatePasswordMatch()) {
+        return false;
+    } 
+    if(!validateEmail(mailInput)){
+        return false;
+    }
+    return true;
+}
+function validateEmail(email) {
+    // Retrieve existing data from local storage
+    var storedData = JSON.parse(localStorage.getItem("storedData")) || [];
+
+    // Check if the entered email already exists
+    var existingEmail = storedData.find(function(item) {
+        return item.email === email;
+    });
+
+    if (existingEmail) {
+        // If email exists, display error message
+        alert("This email already exists. Please use a different email.");
+        return false;
+    } else {
+        // If email doesn't exist, proceed with signup process
+        return true;
+    }
+}
+function validatePasswordMatch(){
     if (passwordInput !== rePasswordInput) {
         alert("Passwords do not match.");
         return false;
     } 
+    return true;
+}
+function validatepasswordLength(){
+    if(passwordInput.length<=6||passwordInput.length>16){
+        alert("Password must be between 6 and 16 characters long.");
+        return false;
+    }
+    return true;
+}
+function validateifEmpty(){
+    if (nameInput === '' || surnameInput === '' || mailInput === '' || passwordInput === '' || rePasswordInput === '') {
+        alert("Please fill in all fields.");
+        return false;
+    }
     return true;
 }

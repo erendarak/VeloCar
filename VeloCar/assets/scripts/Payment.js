@@ -61,10 +61,24 @@ function getInfo(event) {
 }
 
 function validate() {
-    if (cardName === '' || cardNumber === '' || cvv === '' || expDate === '') {
-        alert("Please fill in all fields.");
+    if(!validateifEmpty()){
         return false;
     }
+
+    if (!validateexpDate()) {
+        return false;
+    }
+    if(!validateCVV()){
+        return false;
+    }
+    if(!validateCardNum()){
+        return false;
+    }
+
+    return true;
+}
+
+function validateexpDate(){
     var today = new Date();
     var expirationDate = new Date(expDate);
 
@@ -72,14 +86,26 @@ function validate() {
         alert("Expiration date has already passed.");
         return false;
     }
+    return true;
+}
+function validateCVV(){
     if(cvv.length !== 3){
         alert("CVV must be exactly 3 digits long.");
         return false;
     }
-    if(cardNumber.length != 16){
-        alert("Card Number must be exactly 16 digits long.");
+    return true;
+}
+function validateCardNum(){
+    if(cardNumber.length <16){
+        alert("Card Name must be exactly 16 characters long.");
         return false;
     }
-
+    return true;
+}
+function validateifEmpty(){
+    if (cardName === '' || cardNumber === '' || cvv === '' || expDate === '') {
+        alert("Please fill in all fields.");
+        return false;
+    }
     return true;
 }
