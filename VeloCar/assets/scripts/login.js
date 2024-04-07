@@ -40,24 +40,27 @@ function validateEmail(email) {
 }
 
 function submitAction() {
+    
     let email = document.getElementById('id_email').value;
     let password = document.getElementById('id_pass').value;
 
     let sign_in = document.getElementById('id_sign').checked;
     let delete_rad = document.getElementById('id_delete').checked;
     if (sign_in) {
-        logIn(email, password);
+        if(logIn(email, password)){
+            alert('successfully login');
+        }
     } else if (delete_rad) {
-        alert('d');
+        deleteAccount(email,password);
     } else {
-        logIn(email, password)
+        if(logIn(email, password)){
+            alert('successfully login');
+        }
     }
 }
 
 function logIn(email, password) {
-    alert('sig');
     var storedData = JSON.parse(localStorage.getItem("storedData")) || [];
-
     // Check if the entered email already exists
     var existingEmail = storedData.find(function (item) {
         return item.email === email;
@@ -71,5 +74,19 @@ function logIn(email, password) {
         alert('Wrong email or password');
         return false;
     }
+}
 
+function deleteAccount(email, password){
+    if(logIn(email,password)){
+        var storedData = JSON.parse(localStorage.getItem("storedData")) || [];
+        for(let i = 0; i < storedData.length; i++){
+            if(storedData[i].email == email && storedData[i].password == password){
+                storedData = storedData.filter(item => item.email !== email);
+                alert('Successfully deleted');
+                localStorage.setItem("storedData", JSON.stringify(storedData));
+                return true;
+            }
+        }
+    }
+    return false;
 }
