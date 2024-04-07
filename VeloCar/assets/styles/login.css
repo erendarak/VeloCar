@@ -131,7 +131,7 @@ section{
     margin-bottom: 75px;
 }
 
-.myForm input{
+.myForm>input{
     width: 18rem;
     height: 1.5rem;
     border: 2px solid rgba(116, 116, 116, 0.2);
@@ -139,7 +139,7 @@ section{
     padding: 3px;
 }
 
-.myForm label{
+.myForm>label{
     font-size: 1.3rem;
     padding: 3px;
     font-weight: bold;
