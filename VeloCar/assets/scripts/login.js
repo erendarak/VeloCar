@@ -49,13 +49,21 @@ function submitAction() {
     if (sign_in) {
         if(logIn(email, password)){
             alert('successfully login');
+            window.location.replace('main-page.html');
+            return true;
         }
     } else if (delete_rad) {
-        deleteAccount(email,password);
+        if(deleteAccount(email,password)){
+            return true;
+        }
+        return false;
     } else {
         if(logIn(email, password)){
             alert('successfully login');
+            window.location.replace('main-page.html');
+            return true;
         }
+        return false;
     }
 }
 

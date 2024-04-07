@@ -20,7 +20,7 @@ function getInfo(event) {
     storedData = JSON.parse(localStorage.getItem("storedData")) || [];
     
     if (validate()) {
-        alert("Information stored successfully!");
+        alert("Successfully signed up!");
         
         storedData.push({
             name: nameInput,
@@ -51,20 +51,16 @@ function validate() {
     return true;
 }
 function validateEmail(email) {
-    // Retrieve existing data from local storage
     var storedData = JSON.parse(localStorage.getItem("storedData")) || [];
 
-    // Check if the entered email already exists
     var existingEmail = storedData.find(function(item) {
         return item.email === email;
     });
 
     if (existingEmail) {
-        // If email exists, display error message
         alert("This email already exists. Please use a different email.");
         return false;
     } else {
-        // If email doesn't exist, proceed with signup process
         return true;
     }
 }
@@ -76,7 +72,7 @@ function validatePasswordMatch(){
     return true;
 }
 function validatepasswordLength(){
-    if(passwordInput.length<=6||passwordInput.length>16){
+    if(passwordInput.length<=5||passwordInput.length>16){
         alert("Password must be between 6 and 16 characters long.");
         return false;
     }
